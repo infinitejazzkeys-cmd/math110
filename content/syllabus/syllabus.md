@@ -89,4 +89,4 @@ site regularly, and before each class.
 
 For anything individual — questions about your own work, scheduling a resubmission
 discussion, or notifying me of an absence — email me at
-[pcollins@idpl.org](mailto:pcollins@idpl.org) or come to office hours.
+[p.collins@idpl.org](mailto:p.collins@idpl.org) or come to office hours.
