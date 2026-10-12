@@ -83,6 +83,10 @@ referred to the appropriate institutional authority.
 
 ## Communication
 
-Announcements will be posted on the [home page](index.html) of this site. Please check it
-before each class. For anything individual — questions about your own work, scheduling a
-resubmission discussion, or notifying me of an absence — email me or come to office hours.
+Announcements will be posted on the [home page](index.html) of this site, and lecture slides,
+homework assignments, solutions, and exam materials all live here as well. Please check the
+site regularly, and before each class.
+
+For anything individual — questions about your own work, scheduling a resubmission
+discussion, or notifying me of an absence — email me at
+[pcollins@idpl.org](mailto:pcollins@idpl.org) or come to office hours.
