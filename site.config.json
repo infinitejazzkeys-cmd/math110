@@ -1,0 +1,70 @@
+{
+  "course": {
+    "code": "MATH 110",
+    "title": "General Education Math",
+    "term": "Fall 2026",
+    "institution": "Instituto College",
+    "instructor": "Patrick Collins, Ph.D.",
+    "contactEmail": "REPLACE_WITH_YOUR_INSTITUTO_EMAIL",
+    "meetings": "Mondays & Wednesdays, 6:00–8:00 PM",
+    "location": "2520 S. Western Ave, Chicago, IL 60608 — Room 008",
+    "officeHours": "Mondays & Wednesdays, 5:00–6:00 PM (Room 008)",
+    "description": "An introduction to the mathematical reasoning skills essential for success in healthcare and the sciences. Emphasis is placed on careful reasoning, problem-solving, and the ability to interpret and communicate quantitative information."
+  },
+
+  "units": [
+    { "name": "Counting", "topics": ["Sets", "The Fundamental Principle of Counting", "Factorials", "Permutations", "Combinations", "Counting Arguments"] },
+    { "name": "Probability", "topics": ["Sample Spaces and Events", "Probability by Counting", "Mutually Exclusive Events and the Addition Rule", "Independence and the Multiplication Rule", "Conditional Probability", "Binomial Experiments"] },
+    { "name": "Statistics", "topics": ["Populations and Samples", "Qualitative and Quantitative Variables", "Descriptive Statistics", "Frequency Histograms", "Experimental Probability", "Relative-Frequency Histograms", "Measures of Center", "Measures of Spread", "Normal Distributions", "Z-Scores and Z-Tables"] }
+  ],
+
+  "grading": [
+    { "component": "Midterm Exam 1", "weight": 16 },
+    { "component": "Midterm Exam 2", "weight": 16 },
+    { "component": "Homework (7 assignments)", "weight": 42 },
+    { "component": "Final Exam (cumulative)", "weight": 26 }
+  ],
+
+  "deadlines": [
+    { "date": "2026-10-12", "label": "Homework 1 due", "kind": "homework" },
+    { "date": "2026-10-19", "label": "Homework 2 due", "kind": "homework" },
+    { "date": "2026-10-19", "label": "Homework 1 resubmissions due", "kind": "resub" },
+    { "date": "2026-10-26", "label": "Homework 3 due", "kind": "homework" },
+    { "date": "2026-10-26", "label": "Homework 2 resubmissions due", "kind": "resub" },
+    { "date": "2026-11-02", "label": "Homework 4 due", "kind": "homework" },
+    { "date": "2026-11-02", "label": "Homework 3 resubmissions due", "kind": "resub" },
+    { "date": "2026-11-04", "label": "Midterm Exam 1", "kind": "exam", "detail": "Covers Counting and Probability. 1 hour." },
+    { "date": "2026-11-09", "label": "Homework 4 resubmissions due", "kind": "resub" },
+    { "date": "2026-11-16", "label": "Homework 5 due", "kind": "homework" },
+    { "date": "2026-11-23", "label": "Homework 6 due", "kind": "homework" },
+    { "date": "2026-11-23", "label": "Homework 5 resubmissions due", "kind": "resub" },
+    { "date": "2026-11-30", "label": "Homework 7 due", "kind": "homework" },
+    { "date": "2026-11-30", "label": "Homework 6 resubmissions due", "kind": "resub" },
+    { "date": "2026-12-02", "label": "Midterm Exam 2", "kind": "exam", "detail": "Covers Statistics. 1 hour." },
+    { "date": "2026-12-07", "label": "Homework 7 resubmissions due", "kind": "resub" },
+    { "date": "2026-12-09", "label": "Final Exam", "kind": "exam", "detail": "Cumulative. 2 hours." }
+  ],
+
+  "schedule": [
+    { "week": 1, "date": "2026-10-05", "day": "Mon", "content": "Diagnostic Exam, introduction/syllabus, begin Counting unit" },
+    { "week": 1, "date": "2026-10-07", "day": "Wed", "content": "Continue Counting unit" },
+    { "week": 2, "date": "2026-10-12", "day": "Mon", "content": "HW1 due, continue Counting unit" },
+    { "week": 2, "date": "2026-10-14", "day": "Wed", "content": "Finish Counting unit" },
+    { "week": 3, "date": "2026-10-19", "day": "Mon", "content": "HW1 resubmissions due, HW2 due, begin Probability unit" },
+    { "week": 3, "date": "2026-10-21", "day": "Wed", "content": "Continue Probability unit" },
+    { "week": 4, "date": "2026-10-26", "day": "Mon", "content": "HW2 resubmissions due, HW3 due, continue Probability unit" },
+    { "week": 4, "date": "2026-10-28", "day": "Wed", "content": "Finish Probability unit" },
+    { "week": 5, "date": "2026-11-02", "day": "Mon", "content": "HW3 resubmissions due, HW4 due, Midterm Exam 1 review" },
+    { "week": 5, "date": "2026-11-04", "day": "Wed", "content": "Midterm Exam 1", "highlight": true },
+    { "week": 6, "date": "2026-11-09", "day": "Mon", "content": "HW4 resubmissions due, begin Statistics unit" },
+    { "week": 6, "date": "2026-11-11", "day": "Wed", "content": "Continue Statistics unit" },
+    { "week": 7, "date": "2026-11-16", "day": "Mon", "content": "HW5 due, continue Statistics unit" },
+    { "week": 7, "date": "2026-11-18", "day": "Wed", "content": "Continue Statistics unit" },
+    { "week": 8, "date": "2026-11-23", "day": "Mon", "content": "HW5 resubmissions due, HW6 due, continue Statistics unit" },
+    { "week": 8, "date": "2026-11-25", "day": "Wed", "content": "Finish Statistics unit" },
+    { "week": 9, "date": "2026-11-30", "day": "Mon", "content": "HW6 resubmissions due, HW7 due, Midterm Exam 2 review" },
+    { "week": 9, "date": "2026-12-02", "day": "Wed", "content": "Midterm Exam 2", "highlight": true },
+    { "week": 10, "date": "2026-12-07", "day": "Mon", "content": "HW7 resubmissions due, Final Exam review" },
+    { "week": 10, "date": "2026-12-09", "day": "Wed", "content": "Final Exam", "highlight": true }
+  ]
+}

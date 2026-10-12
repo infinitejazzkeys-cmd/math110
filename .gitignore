@@ -1,0 +1,16 @@
+# LaTeX build leftovers, in case you ever drop sources in content/
+*.aux
+*.log
+*.synctex.gz
+*.nav
+*.snm
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
+node_modules/

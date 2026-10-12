@@ -1,0 +1,12 @@
+{
+  "name": "math110-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MATH 110 course website — Instituto College",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node build.mjs && node serve.mjs",
+    "publish-site": "node build.mjs && node publish.mjs"
+  }
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Home &middot; MATH 110 Fall 2026</title>
+<link rel="icon" href="assets/logo.jpg">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+  <a href="index.html"><img src="assets/logo.jpg" alt="Instituto College"></a>
+  <div class="ht">
+    <div class="code"><a href="index.html">MATH 110 &mdash; General Education Math</a></div>
+    <div class="sub">Instituto College &middot; Fall 2026 &middot; Patrick Collins, Ph.D.</div>
+  </div>
+</div></header>
+
+<nav class="site-nav"><div class="wrap"><a href="index.html" aria-current="page">Home</a><a href="slides.html">Slides</a><a href="homework.html">Homework</a><a href="exams.html">Exams</a><a href="handouts.html">Handouts</a><a href="schedule.html">Schedule</a><a href="syllabus.html">Syllabus</a></div></nav>
+
+<main><div class="wrap">
+<h1>MATH 110: General Education Math</h1>
+<p class="lede">An introduction to the mathematical reasoning skills essential for success in healthcare and the sciences. Emphasis is placed on careful reasoning, problem-solving, and the ability to interpret and communicate quantitative information.</p>
+
+<div class="panel">
+  <h2>Coming up</h2>
+  <div id="nextup-list"><p class="lede" style="margin:0">Loading&hellip;</p></div>
+</div>
+
+<h2>Course materials</h2>
+<div class="grid"><a class="tile" href="slides.html">
+  <div class="tt">Slides</div>
+  <div class="tc">3 items</div>
+</a><a class="tile" href="homework.html">
+  <div class="tt">Homework</div>
+  <div class="tc">1 item</div>
+</a><a class="tile" href="exams.html">
+  <div class="tt">Exams</div>
+  <div class="tc">Nothing posted yet</div>
+</a><a class="tile" href="handouts.html">
+  <div class="tt">Handouts</div>
+  <div class="tc">1 item</div>
+</a></div>
+
+<h2>Announcements</h2>
+<article class="ann">
+  <div class="ad">Monday, October 12</div>
+  <h3>Welcome to the course website</h3>
+<p>Since the Canvas site still isn't available, I've set up this page as our home for the semester. Everything you need will live here:</p>
+<ul><li><strong>Slides</strong> for each unit, posted as we go</li><li><strong>Homework</strong> assignments and, after grading, solutions</li><li><strong>Exams</strong> and review material</li><li>The full <strong>syllabus</strong> and <strong>schedule</strong></li></ul>
+<p>Bookmark this page and check it before each class. Reminder that <strong>Homework 1 is due at the beginning of class today</strong>, and that each assignment may be resubmitted once — see the resubmission policy in the syllabus for the requirements.</p>
+</article>
+
+<h2>Course information</h2>
+<dl class="info">
+  <dt>Instructor</dt><dd>Patrick Collins, Ph.D.</dd>
+  <dt>Class meetings</dt><dd>Mondays &amp; Wednesdays, 6:00–8:00 PM</dd>
+  <dt>Location</dt><dd>2520 S. Western Ave, Chicago, IL 60608 — Room 008</dd>
+  <dt>Office hours</dt><dd>Mondays &amp; Wednesdays, 5:00–6:00 PM (Room 008)</dd>
+  
+</dl>
+
+<h2>Grading</h2>
+<div class="tw"><table>
+<thead><tr><th>Component</th><th>Weight</th></tr></thead>
+<tbody>
+<tr><td>Midterm Exam 1</td><td>16%</td></tr>
+<tr><td>Midterm Exam 2</td><td>16%</td></tr>
+<tr><td>Homework (7 assignments)</td><td>42%</td></tr>
+<tr><td>Final Exam (cumulative)</td><td>26%</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>100%</strong></td></tr>
+</tbody>
+</table></div>
+
+<script id="deadlines" type="application/json">[{"date":"2026-10-12","label":"Homework 1 due","kind":"homework"},{"date":"2026-10-19","label":"Homework 2 due","kind":"homework"},{"date":"2026-10-19","label":"Homework 1 resubmissions due","kind":"resub"},{"date":"2026-10-26","label":"Homework 3 due","kind":"homework"},{"date":"2026-10-26","label":"Homework 2 resubmissions due","kind":"resub"},{"date":"2026-11-02","label":"Homework 4 due","kind":"homework"},{"date":"2026-11-02","label":"Homework 3 resubmissions due","kind":"resub"},{"date":"2026-11-04","label":"Midterm Exam 1","kind":"exam","detail":"Covers Counting and Probability. 1 hour."},{"date":"2026-11-09","label":"Homework 4 resubmissions due","kind":"resub"},{"date":"2026-11-16","label":"Homework 5 due","kind":"homework"},{"date":"2026-11-23","label":"Homework 6 due","kind":"homework"},{"date":"2026-11-23","label":"Homework 5 resubmissions due","kind":"resub"},{"date":"2026-11-30","label":"Homework 7 due","kind":"homework"},{"date":"2026-11-30","label":"Homework 6 resubmissions due","kind":"resub"},{"date":"2026-12-02","label":"Midterm Exam 2","kind":"exam","detail":"Covers Statistics. 1 hour."},{"date":"2026-12-07","label":"Homework 7 resubmissions due","kind":"resub"},{"date":"2026-12-09","label":"Final Exam","kind":"exam","detail":"Cumulative. 2 hours."}]</script>
+<script>
+(function () {
+  var all;
+  try { all = JSON.parse(document.getElementById('deadlines').textContent); }
+  catch (e) { return; }
+
+  var now   = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12);
+  var LABEL = { exam: 'Exam', homework: 'Homework', resub: 'Resubmission' };
+
+  function at(iso) { var p = iso.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); }
+
+  var up = all
+    .filter(function (d) { return at(d.date).getTime() >= today.getTime(); })
+    .sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; })
+    .slice(0, 4);
+
+  var el = document.getElementById('nextup-list');
+  if (!el) return;
+
+  if (!up.length) {
+    el.innerHTML = '<p class="lede" style="margin:0">Nothing left on the calendar \u2014 have a great break.</p>';
+    return;
+  }
+
+  el.innerHTML = up.map(function (d) {
+    var dt   = at(d.date);
+    var days = Math.round((dt.getTime() - today.getTime()) / 86400000);
+    var rel  = days === 0 ? 'today' : days === 1 ? 'tomorrow' : 'in ' + days + ' days';
+    var when = dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+    return '<div class="due"><div class="dl">' + d.label
+      + '<span class="tag ' + d.kind + '">' + (LABEL[d.kind] || d.kind) + '</span>'
+      + (d.detail ? '<span class="det">' + d.detail + '</span>' : '')
+      + '</div><div class="dd">' + when + '<br>' + rel + '</div></div>';
+  }).join('');
+})();
+</script>
+
+</div></main>
+
+<footer class="site-foot"><div class="wrap">
+  <div><strong>Instituto College</strong> &middot; 2520 S. Western Avenue, Chicago, IL 60608 &middot; 773-890-0055</div>
+  <div>MATH 110 Fall 2026 &middot; Patrick Collins, Ph.D.</div>
+  <div style="margin-top:8px">Course materials for enrolled students. Last updated October 12, 2026.</div>
+</div></footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+  onload="try{renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})}catch(e){}"></script>
+</body>
+</html>
