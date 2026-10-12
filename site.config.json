@@ -26,7 +26,7 @@
   ],
 
   "deadlines": [
-    { "date": "2026-10-12", "label": "Homework 1 due", "kind": "homework" },
+    { "date": "2026-10-14", "label": "Homework 1 due", "kind": "homework" },
     { "date": "2026-10-19", "label": "Homework 2 due", "kind": "homework" },
     { "date": "2026-10-19", "label": "Homework 1 resubmissions due", "kind": "resub" },
     { "date": "2026-10-26", "label": "Homework 3 due", "kind": "homework" },
@@ -48,8 +48,8 @@
   "schedule": [
     { "week": 1, "date": "2026-10-05", "day": "Mon", "content": "Diagnostic Exam, introduction/syllabus, begin Counting unit" },
     { "week": 1, "date": "2026-10-07", "day": "Wed", "content": "Continue Counting unit" },
-    { "week": 2, "date": "2026-10-12", "day": "Mon", "content": "HW1 due, continue Counting unit" },
-    { "week": 2, "date": "2026-10-14", "day": "Wed", "content": "Finish Counting unit" },
+    { "week": 2, "date": "2026-10-12", "day": "Mon", "content": "No class — holiday" },
+    { "week": 2, "date": "2026-10-14", "day": "Wed", "content": "HW1 due, finish Counting unit" },
     { "week": 3, "date": "2026-10-19", "day": "Mon", "content": "HW1 resubmissions due, HW2 due, begin Probability unit" },
     { "week": 3, "date": "2026-10-21", "day": "Wed", "content": "Continue Probability unit" },
     { "week": 4, "date": "2026-10-26", "day": "Mon", "content": "HW2 resubmissions due, HW3 due, continue Probability unit" },

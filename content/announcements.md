@@ -20,6 +20,9 @@ semester. Everything you need will live here:
 - **Exams** and review material
 - The full **syllabus** and **schedule**
 
-Bookmark this page and check it before each class. Reminder that **Homework 1 is due at the
-beginning of class today**, and that each assignment may be resubmitted once — see the
-resubmission policy in the syllabus for the requirements.
+Bookmark this page and check it before each class.
+
+**There is no class today — the college is closed for the holiday.** Because of that,
+**Homework 1 is now due at the beginning of class on Wednesday, October 14** rather than
+today. Nothing else on the schedule changes. Remember that each assignment may be
+resubmitted once — see the resubmission policy in the syllabus for the requirements.
