@@ -468,9 +468,13 @@ fs.writeFileSync(path.join(OUT, 'schedule.html'), page({
 const sylDir = path.join(CONTENT, 'syllabus');
 const sylMd  = path.join(sylDir, 'syllabus.md');
 const sylFiles = fs.existsSync(sylDir)
-  ? fs.readdirSync(sylDir).filter(f =>
-      !/\.md$/i.test(f) && !f.startsWith('.') && !/^README/i.test(f)
-      && fs.statSync(path.join(sylDir, f)).isFile())
+  ? fs.readdirSync(sylDir)
+      .filter(f =>
+        !/\.md$/i.test(f) && !f.startsWith('.') && !/^README/i.test(f)
+        && fs.statSync(path.join(sylDir, f)).isFile())
+      // PDF is the better download for students, so offer it first.
+      .sort((a, b) => (/\.pdf$/i.test(b) ? 1 : 0) - (/\.pdf$/i.test(a) ? 1 : 0)
+        || a.localeCompare(b))
   : [];
 
 if (sylFiles.length) {
