@@ -22,7 +22,12 @@ semester. Everything you need will live here:
 
 Bookmark this page and check it before each class.
 
-**There is no class today — the college is closed for the holiday.** Because of that,
-**Homework 1 is now due at the beginning of class on Wednesday, October 14** rather than
-today. Nothing else on the schedule changes. Remember that each assignment may be
-resubmitted once — see the resubmission policy in the syllabus for the requirements.
+**There is no class today — the college is closed for the holiday.** Two deadlines shift
+as a result:
+
+- **Homework 1 is now due Wednesday, October 14**, at the beginning of class, rather than today.
+- **Homework 1 resubmissions are now due Wednesday, October 21**, rather than Monday the 19th.
+
+**Homework 2 is still due Monday, October 19**, and nothing later in the semester changes.
+Remember that each assignment may be resubmitted once — see the resubmission policy in the
+syllabus for the requirements.
