@@ -7,6 +7,6 @@
   "scripts": {
     "build": "node build.mjs",
     "start": "node build.mjs && node serve.mjs",
-    "publish-site": "node build.mjs && node publish.mjs"
+    "publish-site": "node build.mjs && node publish.mjs && node notify.mjs"
   }
 }

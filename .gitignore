@@ -14,3 +14,6 @@ Thumbs.db
 desktop.ini
 .DS_Store
 node_modules/
+
+# generated email draft - may contain nothing sensitive, but no need to publish it
+email-draft.txt
