@@ -16,7 +16,7 @@ Since the Canvas site still isn't available, I've set up this page as our home f
 semester. Everything you need will live here:
 
 - **Slides** for each unit, posted as we go
-- **Homework** assignments and, after grading, solutions
+- **Homework** assignments and, after resubmission, solutions
 - **Exams** and review material
 - The full **syllabus** and **schedule**
 
