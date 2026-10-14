@@ -91,7 +91,7 @@ const CATS = [
   },
   {
     key: 'homework', nav: 'Homework', h1: 'Homework',
-    lede: 'Assignments are handed out at the end of class on Wednesday and due at the beginning of class the following Monday. Solutions appear here once an assignment has been graded and returned.',
+    lede: 'Assignments are handed out at the end of class on Wednesday and due at the beginning of class the following Monday. Solutions are never posted before resubmissions for that assignment have been collected.',
     empty: 'No assignments posted yet.',
   },
   {
