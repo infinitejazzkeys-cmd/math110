@@ -138,6 +138,12 @@ try {
     $smtp.Send($msg)
     Write-Host ""
     Write-Host "Sent." -ForegroundColor Green
+
+    # Consume the draft so the same message can never go out twice. Tests and
+    # dry runs leave it alone, and a failed send keeps it for manual sending.
+    if (-not $TestOnly -and -not $usingSample -and (Test-Path $draftPath)) {
+        Remove-Item $draftPath -Force
+    }
 }
 catch {
     $detail = $_.Exception.Message

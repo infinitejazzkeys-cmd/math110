@@ -83,6 +83,9 @@ if (fs.existsSync(annFile)) {
 }
 
 if (!added.length && !updated.length && !announced) {
+  // Clear any draft left from an earlier publish. Without this, a second
+  // publish would find the old draft and mail it to the class a second time.
+  if (fs.existsSync(OUT)) fs.rmSync(OUT);
   console.log('\nNothing student-facing changed - no email draft written.');
   process.exit(0);
 }
