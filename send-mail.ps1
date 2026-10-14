@@ -36,6 +36,14 @@ if (-not $DryRun -and -not (Test-Path $credPath)) {
 
 $cfg = Get-Content $cfgPath -Raw | ConvertFrom-Json
 
+if ($cfg.from -match 'FILL_IN_') {
+    Write-Host ""
+    Write-Host "mail.config.json still has placeholder values." -ForegroundColor Yellow
+    Write-Host "Fill in 'from' (your new Gmail address) and 'recipients', then try again."
+    Write-Host "Draft left in email-draft.txt."
+    exit 0
+}
+
 # --- split the draft into subject + body --------------------------------
 $draft = Get-Content $draftPath -Raw
 $lines = $draft -split "`r?`n"
