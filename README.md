@@ -90,24 +90,41 @@ script, say) — only new or updated student-facing material and new announcemen
 
 ### One-time setup
 
-1. Copy `mail.config.example.json` to `mail.config.json` and put your real
-   recipients in it — the 5 students and your administrator.
-2. Store your password, encrypted:
+Mail goes out through a **dedicated Gmail account** created just for this course —
+nothing is needed from IDPL's IT staff.
+
+1. **Make the account**, e.g. `math110.instituto@gmail.com`. Keep it separate from
+   your personal Gmail: students and administrators will see this address for the
+   rest of the semester, and you can reuse or hand it over later.
+2. **Turn on 2-Step Verification** on that account, then generate an App Password at
+   <https://myaccount.google.com/apppasswords>. Gmail will not issue one until
+   2-Step Verification is on, and your normal password will *not* work for SMTP.
+3. Copy `mail.config.example.json` to `mail.config.json` and fill in:
+   - `from` — the new Gmail address
+   - `fromName` — what students see, e.g. `Prof. Collins - MATH 110`
+   - `replyTo` — your real `p.collins@idpl.org`, so replies reach your normal inbox
+   - `recipients` — the 5 students and your administrator
+4. **Store the app password**, encrypted:
 
    ```bash
    powershell -File setup-mail.ps1
    ```
 
-   It prompts you; the password is encrypted with Windows DPAPI, tied to your
-   Windows account on this machine. **If your account uses MFA you need an
-   app password, not your normal one.**
-3. Send yourself a test:
+   Encrypted with Windows DPAPI, tied to your Windows account on this machine.
+5. **Send yourself a test:**
 
    ```bash
    npm run test-mail
    ```
 
    This goes only to you — never to the class.
+
+Yahoo works the same way (`smtp.mail.yahoo.com`, port 587, app password) if you'd
+rather use it. Gmail is the default because deliverability is reliable and the
+app-password flow is better documented.
+
+**Tell the class the address** in person or from your IDPL account first, so the
+first message isn't mistaken for spam.
 
 ### Everyday use
 
@@ -125,18 +142,21 @@ Use `publish-quiet` for small corrections you don't want to email about.
 The draft always lands in `email-draft.txt`, so if sending fails you can paste it
 into Outlook. **A mail failure never fails the publish** — the site goes live either way.
 
-Everyone is **BCC'd**, so students never see each other's addresses. You get a copy.
+Everyone is **BCC'd**, so students never see each other's addresses. You get a copy,
+and because `replyTo` points at your IDPL address, their replies land in your normal
+inbox — you never have to watch the Gmail account.
 
 ### If it stops working
 
-Two likely causes:
+- **`535` / "Username and Password not accepted"** — you used the normal password
+  instead of the app password, or 2-Step Verification got switched off. Generate a
+  fresh app password and re-run `setup-mail.ps1`.
+- **Revoked app password** — if you ever change the Gmail password, existing app
+  passwords stop working. Generate a new one and re-run setup.
+- **Sending limits** — free Gmail allows roughly 500 recipients a day. With 6
+  recipients you will not come close.
 
-- **IDPL has SMTP AUTH disabled for your mailbox.** You'll see a `5.7.30` or
-  `SmtpAuthenticationDisabled` error. Ask IT to enable "Authenticated SMTP" for
-  your account, or fall back to pasting `email-draft.txt`.
-- **It's past December 2026.** Microsoft is disabling basic authentication for
-  SMTP by default at the end of that month. It should last through this semester,
-  but it will need revisiting afterward.
+Nothing here depends on IDPL, so none of it can be switched off by their IT team.
 
 ### What must never be committed
 

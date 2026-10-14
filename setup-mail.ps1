@@ -25,11 +25,25 @@ $from = $cfg.from
 
 Write-Host ""
 Write-Host "Setting up automatic class email for: $from"
+Write-Host "Mail server: $($cfg.smtpHost)"
 Write-Host ""
-Write-Host "You will be asked for the password for that mailbox." -ForegroundColor Cyan
-Write-Host "If your account uses multi-factor authentication you will need an"
-Write-Host "APP PASSWORD rather than your normal one. If IDPL's IT has disabled"
-Write-Host "SMTP AUTH or app passwords, this will not work - see README."
+Write-Host "Use an APP PASSWORD here, not your normal password." -ForegroundColor Cyan
+
+if ($cfg.smtpHost -match 'gmail') {
+    Write-Host "  Gmail: turn on 2-Step Verification first, then generate one at"
+    Write-Host "         https://myaccount.google.com/apppasswords"
+    Write-Host "         It looks like 16 letters; spaces in it do not matter."
+}
+elseif ($cfg.smtpHost -match 'yahoo') {
+    Write-Host "  Yahoo: generate one at https://myaccount.yahoo.com/security"
+    Write-Host "         under 'How you sign in to Yahoo' > Generate app password."
+}
+else {
+    Write-Host "  This host may require your IT department to allow Authenticated SMTP."
+}
+
+Write-Host ""
+Write-Host "Nothing you type here is shown on screen or written anywhere in plain text."
 Write-Host ""
 
 $cred = Get-Credential -UserName $from -Message "Password for $from"

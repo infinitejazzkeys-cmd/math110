@@ -1,14 +1,27 @@
 {
   "_comment": [
     "Copy this file to mail.config.json and fill it in.",
-    "mail.config.json is git-ignored, so the addresses never reach the public repo.",
+    "mail.config.json is git-ignored, so addresses never reach the public repo.",
     "Your password does NOT go in here - see setup-mail.ps1."
   ],
 
-  "smtpHost": "smtp.office365.com",
+  "_provider_note": [
+    "Gmail:  smtp.gmail.com        port 587   (needs 2-Step Verification + an App Password)",
+    "Yahoo:  smtp.mail.yahoo.com   port 587   (needs an App Password)",
+    "IDPL:   smtp.office365.com    port 587   (needs IT to allow Authenticated SMTP)"
+  ],
+  "smtpHost": "smtp.gmail.com",
   "smtpPort": 587,
 
-  "from": "p.collins@idpl.org",
+  "_from_note": [
+    "'from' must be the SAME address you authenticate as - Gmail and Yahoo both",
+    "rewrite the sender otherwise. 'fromName' is what students actually see.",
+    "'replyTo' is where their replies go: put your real IDPL address there so",
+    "you never have to monitor the sending account's inbox."
+  ],
+  "from": "math110.instituto@gmail.com",
+  "fromName": "Prof. Collins - MATH 110",
+  "replyTo": "p.collins@idpl.org",
 
   "_recipients_note": "Everyone here is BCC'd, so students never see each other's addresses.",
   "recipients": [

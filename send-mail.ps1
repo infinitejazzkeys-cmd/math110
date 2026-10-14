@@ -28,7 +28,7 @@ if (-not (Test-Path $cfgPath)) {
     Write-Host "Email not configured (no mail.config.json) - draft left in email-draft.txt."
     exit 0
 }
-if (-not (Test-Path $credPath)) {
+if (-not $DryRun -and -not (Test-Path $credPath)) {
     Write-Host "Email password not set up yet - run:  powershell -File setup-mail.ps1"
     Write-Host "Draft left in email-draft.txt."
     exit 0
@@ -86,7 +86,15 @@ $msg = New-Object System.Net.Mail.MailMessage
 $smtp = $null
 
 try {
-    $msg.From = New-Object System.Net.Mail.MailAddress($cfg.from)
+    if ($cfg.fromName) {
+        $msg.From = New-Object System.Net.Mail.MailAddress($cfg.from, $cfg.fromName)
+    } else {
+        $msg.From = New-Object System.Net.Mail.MailAddress($cfg.from)
+    }
+
+    # Replies go to your real inbox, not the sending account's.
+    if ($cfg.replyTo) { $msg.ReplyToList.Add($cfg.replyTo) }
+
     $msg.To.Add($cfg.from)                       # a copy for your own records
     foreach ($r in $recipients) { $msg.Bcc.Add($r) }   # BCC: students never see each other
     $msg.Subject = $subject
@@ -110,11 +118,19 @@ catch {
     Write-Host "Could not send the email." -ForegroundColor Red
     Write-Host $detail
 
-    if ($detail -match '5\.7\.30|Basic authentication is not supported|SmtpAuthenticationDisabled|5\.7\.139') {
+    if ($detail -match '5\.7\.0|535|Username and Password not accepted|authentication failed|BadCredentials') {
         Write-Host ""
-        Write-Host "That error means IDPL has SMTP AUTH turned off for your mailbox." -ForegroundColor Yellow
-        Write-Host "Ask IT to enable 'Authenticated SMTP' for $($cfg.from), or switch to"
-        Write-Host "the paste-the-draft workflow - email-draft.txt is ready to send."
+        Write-Host "The mail server rejected your credentials." -ForegroundColor Yellow
+        Write-Host "For Gmail and Yahoo this almost always means you used your normal"
+        Write-Host "password instead of an APP PASSWORD. Gmail also requires 2-Step"
+        Write-Host "Verification to be switched on before it will issue one."
+        Write-Host "Generate a fresh app password, then re-run:  powershell -File setup-mail.ps1"
+    }
+    elseif ($detail -match '5\.7\.30|Basic authentication is not supported|SmtpAuthenticationDisabled|5\.7\.139') {
+        Write-Host ""
+        Write-Host "That error means the mail host has SMTP AUTH turned off for this mailbox." -ForegroundColor Yellow
+        Write-Host "If you are on the IDPL account, switching to a dedicated Gmail avoids"
+        Write-Host "needing anything from IDPL's IT staff - see README."
     }
 
     Write-Host ""
