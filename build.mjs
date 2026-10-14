@@ -108,6 +108,7 @@ const CATS = [
 
 const NAV = [
   { href: 'index.html', label: 'Home' },
+  { href: 'announcements.html', label: 'Announcements' },
   ...CATS.map(c => ({ href: c.key + '.html', label: c.nav })),
   { href: 'schedule.html', label: 'Schedule' },
   { href: 'syllabus.html', label: 'Syllabus' },
@@ -304,26 +305,38 @@ for (const cat of CATS) {
   }));
 }
 
-/* ---- home: announcements ---- */
+/* ---- announcements ---- */
 const annSrc = path.join(CONTENT, 'announcements.md');
-let annHTML = '';
-if (fs.existsSync(annSrc)) {
+
+/** Each "## YYYY-MM-DD — Headline" block becomes one post. Newest first. */
+function parseAnnouncements() {
+  if (!fs.existsSync(annSrc)) return [];
   const raw = fs.readFileSync(annSrc, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
-  annHTML = raw.split(/^##\s+/m).slice(1).map(b => {
+
+  return raw.split(/^##\s+/m).slice(1).map(b => {
     const nl   = b.indexOf('\n');
     const head = (nl === -1 ? b : b.slice(0, nl)).trim();
     const rest = nl === -1 ? '' : b.slice(nl + 1);
     const dm   = head.match(/^(\d{4}-\d{2}-\d{2})\s*[—–-]\s*(.*)$/);
-    const when = dm ? fmtDate(dm[1], { weekday: 'long', month: 'long', day: 'numeric' }) : '';
-    const titleTxt = dm ? dm[2] : head;
 
-    return '<article class="ann">\n'
-      + (when ? '  <div class="ad">' + esc(when) + '</div>\n' : '')
-      + '  <h3>' + inline(titleTxt) + '</h3>\n'
-      + md(rest) + '\n'
-      + '</article>';
-  }).join('\n');
+    return {
+      date:  dm ? dm[1] : '',
+      when:  dm ? fmtDate(dm[1], { weekday: 'long', month: 'long', day: 'numeric' }) : '',
+      title: dm ? dm[2] : head,
+      body:  md(rest),
+    };
+  });
 }
+
+function annArticle(a) {
+  return '<article class="ann">\n'
+    + (a.when ? '  <div class="ad">' + esc(a.when) + '</div>\n' : '')
+    + '  <h3>' + inline(a.title) + '</h3>\n'
+    + a.body + '\n'
+    + '</article>';
+}
+
+const announcements = parseAnnouncements();
 
 const tiles = CATS.map(c => {
   const n = scanned[c.key].length;
@@ -332,6 +345,18 @@ const tiles = CATS.map(c => {
     + '  <div class="tc">' + (n ? n + (n === 1 ? ' item' : ' items') : 'Nothing posted yet') + '</div>\n'
     + '</a>';
 }).join('');
+
+// The home page shows only a pointer to the newest post; the full list lives
+// on its own page.
+const latestHTML = announcements.length
+  ? '<div class="card">\n'
+    + '  <div class="ct">' + inline(announcements[0].title) + '</div>\n'
+    + '  <div class="cm">' + esc(announcements[0].when) + '</div>\n'
+    + '  <div class="btns">'
+    + '<a class="btn primary" href="announcements.html">Read announcements</a>'
+    + '</div>\n'
+    + '</div>'
+  : '<p class="empty">No announcements yet.</p>';
 
 const contactOK = C.contactEmail && !/^REPLACE/i.test(C.contactEmail);
 const emailRow = contactOK
@@ -354,8 +379,8 @@ const homeBody = `
 <h2>Course materials</h2>
 <div class="grid">${tiles}</div>
 
-<h2>Announcements</h2>
-${annHTML || '<p class="empty">No announcements yet.</p>'}
+<h2>Latest announcement</h2>
+${latestHTML}
 
 <h2>Course information</h2>
 <dl class="info">
@@ -416,6 +441,17 @@ fs.writeFileSync(path.join(OUT, 'index.html'), page({
   h1: C.code + ': ' + C.title,
   lede: C.description,
   body: homeBody,
+}));
+
+/* ---- announcements page ---- */
+fs.writeFileSync(path.join(OUT, 'announcements.html'), page({
+  title: 'Announcements',
+  active: 'announcements.html',
+  h1: 'Announcements',
+  lede: 'Course updates, schedule changes, and reminders. Newest first.',
+  body: announcements.length
+    ? announcements.map(annArticle).join('\n')
+    : '<p class="empty">No announcements yet.</p>',
 }));
 
 /* ---- schedule ---- */
