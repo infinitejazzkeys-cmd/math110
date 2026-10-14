@@ -17,3 +17,8 @@ node_modules/
 
 # generated email draft - may contain nothing sensitive, but no need to publish it
 email-draft.txt
+
+# Email setup — MUST NOT be committed: this repo is public.
+# mail.config.json holds student addresses; mail.cred.xml holds your password.
+mail.config.json
+mail.cred.xml

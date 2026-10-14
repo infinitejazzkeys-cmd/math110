@@ -30,6 +30,22 @@ if (!tryGit('rev-parse', '--git-dir').ok) {
   process.exit(1);
 }
 
+/* --- never let private email files reach the public repo ---------------- */
+// .gitignore already covers these; this is the backstop in case it is edited
+// or a file gets force-added. Student addresses and a password must not ship.
+const PRIVATE = ['mail.config.json', 'mail.cred.xml', 'email-draft.txt'];
+const tracked = git('ls-files').split('\n').filter(Boolean);
+const leaked = PRIVATE.filter(f => tracked.includes(f));
+
+if (leaked.length) {
+  console.error('\nPUBLISH STOPPED - these private files are tracked by git,\n'
+    + 'and this repository is public:\n');
+  for (const f of leaked) console.error('  ' + f);
+  console.error('\nRemove them from git with:  git rm --cached <file>\n'
+    + 'then check .gitignore still lists them.\n');
+  process.exit(1);
+}
+
 /* --- is there anything to publish? ------------------------------------- */
 const status = git('status', '--porcelain');
 if (!status) {

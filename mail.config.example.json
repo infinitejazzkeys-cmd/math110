@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "Copy this file to mail.config.json and fill it in.",
+    "mail.config.json is git-ignored, so the addresses never reach the public repo.",
+    "Your password does NOT go in here - see setup-mail.ps1."
+  ],
+
+  "smtpHost": "smtp.office365.com",
+  "smtpPort": 587,
+
+  "from": "p.collins@idpl.org",
+
+  "_recipients_note": "Everyone here is BCC'd, so students never see each other's addresses.",
+  "recipients": [
+    "student1@example.edu",
+    "student2@example.edu",
+    "administrator@idpl.org"
+  ]
+}

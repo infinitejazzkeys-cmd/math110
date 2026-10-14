@@ -82,6 +82,70 @@ appears automatically.
 
 ---
 
+## Emailing the class automatically
+
+When you publish, the site works out what changed and emails the class from your
+IDPL address. Nothing is sent if only internal things changed (a typo in the build
+script, say) — only new or updated student-facing material and new announcements.
+
+### One-time setup
+
+1. Copy `mail.config.example.json` to `mail.config.json` and put your real
+   recipients in it — the 5 students and your administrator.
+2. Store your password, encrypted:
+
+   ```bash
+   powershell -File setup-mail.ps1
+   ```
+
+   It prompts you; the password is encrypted with Windows DPAPI, tied to your
+   Windows account on this machine. **If your account uses MFA you need an
+   app password, not your normal one.**
+3. Send yourself a test:
+
+   ```bash
+   npm run test-mail
+   ```
+
+   This goes only to you — never to the class.
+
+### Everyday use
+
+`npm run publish-site` now does: build → commit → push → draft the email → send it.
+
+| Command | What it does |
+|---|---|
+| `npm run publish-site` | Publish **and** email the class |
+| `npm run publish-quiet` | Publish, write the draft, **send nothing** |
+| `npm run test-mail` | Send the current draft to yourself only |
+| `npm run preview-mail` | Print what would be sent, send nothing |
+
+Use `publish-quiet` for small corrections you don't want to email about.
+
+The draft always lands in `email-draft.txt`, so if sending fails you can paste it
+into Outlook. **A mail failure never fails the publish** — the site goes live either way.
+
+Everyone is **BCC'd**, so students never see each other's addresses. You get a copy.
+
+### If it stops working
+
+Two likely causes:
+
+- **IDPL has SMTP AUTH disabled for your mailbox.** You'll see a `5.7.30` or
+  `SmtpAuthenticationDisabled` error. Ask IT to enable "Authenticated SMTP" for
+  your account, or fall back to pasting `email-draft.txt`.
+- **It's past December 2026.** Microsoft is disabling basic authentication for
+  SMTP by default at the end of that month. It should last through this semester,
+  but it will need revisiting afterward.
+
+### What must never be committed
+
+`mail.config.json` (student addresses) and `mail.cred.xml` (your password) are
+git-ignored, and `npm run publish-site` refuses to run if either ever becomes
+tracked. This repository is public — that matters.
+
+---
+
 ## Previewing before you publish
 
 ```bash
