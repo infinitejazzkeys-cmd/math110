@@ -141,8 +141,15 @@ try {
 
     # Consume the draft so the same message can never go out twice. Tests and
     # dry runs leave it alone, and a failed send keeps it for manual sending.
-    if (-not $TestOnly -and -not $usingSample -and (Test-Path $draftPath)) {
-        Remove-Item $draftPath -Force
+    if (-not $TestOnly -and -not $usingSample) {
+        if (Test-Path $draftPath) { Remove-Item $draftPath -Force }
+
+        # Remember what we just told them about, so the next draft covers only
+        # what has changed since - however many publishes that spans.
+        $sha = & git -C $here rev-parse HEAD 2>$null
+        if ($LASTEXITCODE -eq 0 -and $sha) {
+            Set-Content -Path (Join-Path $here '.last-emailed') -Value $sha.Trim() -Encoding ascii
+        }
     }
 }
 catch {

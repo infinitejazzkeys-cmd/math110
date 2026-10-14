@@ -22,3 +22,6 @@ email-draft.txt
 # mail.config.json holds student addresses; mail.cred.xml holds your password.
 mail.config.json
 mail.cred.xml
+
+# marks the last commit the class was emailed about
+.last-emailed

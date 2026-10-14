@@ -34,9 +34,23 @@ if (m) url = 'https://' + m[1].toLowerCase() + '.github.io/' + m[2] + '/';
 // Defaults to the commit just published. Pass a commit to redo an older one,
 // e.g. `node notify.mjs ab03ec7` to regenerate that publish's draft.
 const target = process.argv[2] || 'HEAD';
-const hasParent = git('rev-parse', '--verify', target + '~1') !== '';
-const diff = hasParent
-  ? git('diff', '--name-status', target + '~1', target, '--', 'content')
+
+// Because sending is a separate, deliberate step, several publishes can pile up
+// before an email goes out. Measure from the last commit we actually emailed
+// about, so nothing silently drops off the list.
+const MARKER = path.join(ROOT, '.last-emailed');
+let from = target + '~1';
+
+if (!process.argv[2] && fs.existsSync(MARKER)) {
+  const sha = fs.readFileSync(MARKER, 'utf8').trim();
+  if (sha && git('rev-parse', '--verify', '--quiet', sha + '^{commit}')) {
+    from = sha;
+  }
+}
+
+const hasFrom = git('rev-parse', '--verify', '--quiet', from) !== '';
+const diff = hasFrom
+  ? git('diff', '--name-status', from, target, '--', 'content')
   : git('show', '--name-status', '--format=', target, '--', 'content');
 
 const LABEL = {
@@ -133,4 +147,6 @@ fs.writeFileSync(OUT, draft);
 console.log('\n' + '-'.repeat(60));
 console.log(draft.trimEnd());
 console.log('-'.repeat(60));
-console.log('Also saved to email-draft.txt');
+console.log('NOT SENT. This is a draft of what the class would receive.');
+console.log('To actually email it:   npm run send-email');
+console.log('To discard it:          npm run discard-email');

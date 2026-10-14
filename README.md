@@ -128,16 +128,31 @@ first message isn't mistaken for spam.
 
 ### Everyday use
 
-`npm run publish-site` now does: build → commit → push → draft the email → send it.
+**Publishing never emails anyone.** It shows you a draft of what the class *would*
+receive, and nothing leaves your machine until you say so:
+
+```bash
+npm run publish-site     # publishes the site, prints a draft, sends nothing
+npm run send-email       # NOW it goes to the class
+```
+
+That's deliberate. An email you forgot to send takes ten seconds to fix; one sent
+to five students and an administrator at 9pm cannot be recalled.
 
 | Command | What it does |
 |---|---|
-| `npm run publish-site` | Publish **and** email the class |
-| `npm run publish-quiet` | Publish, write the draft, **send nothing** |
-| `npm run test-mail` | Send the current draft to yourself only |
+| `npm run publish-site` | Publish and draft the email — **sends nothing** |
+| `npm run send-email` | Send the current draft to the class |
+| `npm run discard-email` | Throw the draft away without sending |
+| `npm run test-mail` | Send the draft to yourself only |
 | `npm run preview-mail` | Print what would be sent, send nothing |
 
-Use `publish-quiet` for small corrections you don't want to email about.
+`publish-quiet` still works and is identical to `publish-site`.
+
+**Drafts accumulate.** If you publish three times before sending, the draft covers
+everything since your *last email*, not just the most recent publish — so nothing
+quietly drops off the list. Sending resets that point; `discard-email` does not, so
+a discarded item still shows up in the next draft.
 
 The draft always lands in `email-draft.txt`, so if sending fails you can paste it
 into Outlook. **A mail failure never fails the publish** — the site goes live either way.
