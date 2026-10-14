@@ -20,9 +20,16 @@ $credPath  = Join-Path $here 'mail.cred.xml'
 $draftPath = Join-Path $here 'email-draft.txt'
 
 # --- nothing to do? bow out quietly -------------------------------------
+# A test is about proving the credentials work, so it must not depend on there
+# being unpublished material lying around. Fall back to a sample message.
+$usingSample = $false
 if (-not (Test-Path $draftPath)) {
-    Write-Host "No email draft to send."
-    exit 0
+    if ($TestOnly -or $DryRun) {
+        $usingSample = $true
+    } else {
+        Write-Host "No email draft to send."
+        exit 0
+    }
 }
 if (-not (Test-Path $cfgPath)) {
     Write-Host "Email not configured (no mail.config.json) - draft left in email-draft.txt."
@@ -44,15 +51,29 @@ if ($cfg.from -match 'FILL_IN_') {
     exit 0
 }
 
-# --- split the draft into subject + body --------------------------------
-$draft = Get-Content $draftPath -Raw
-$lines = $draft -split "`r?`n"
-if ($lines[0] -notmatch '^Subject:\s*(.+)$') {
-    Write-Host "email-draft.txt is malformed (no Subject line) - not sending." -ForegroundColor Yellow
-    exit 0
+# --- subject + body -----------------------------------------------------
+if ($usingSample) {
+    $subject = 'MATH 110 - test message'
+    $body = @"
+This is a test of the MATH 110 course site email setup.
+
+If you are reading this, sending works: the site can now email the class
+automatically whenever you post new material or an announcement.
+
+Nothing was sent to your students - this message went only to you.
+
+Course website: https://infinitejazzkeys-cmd.github.io/math110/
+"@
+} else {
+    $draft = Get-Content $draftPath -Raw
+    $lines = $draft -split "`r?`n"
+    if ($lines[0] -notmatch '^Subject:\s*(.+)$') {
+        Write-Host "email-draft.txt is malformed (no Subject line) - not sending." -ForegroundColor Yellow
+        exit 0
+    }
+    $subject = $Matches[1].Trim()
+    $body = ($lines[1..($lines.Length - 1)] -join "`r`n").TrimStart("`r", "`n")
 }
-$subject = $Matches[1].Trim()
-$body = ($lines[1..($lines.Length - 1)] -join "`r`n").TrimStart("`r", "`n")
 
 # --- who gets it --------------------------------------------------------
 $recipients = @()
