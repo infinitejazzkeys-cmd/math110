@@ -64,8 +64,10 @@ for (const line of diff.split('\n').filter(Boolean)) {
   const title = base.replace(/^\s*\d+\s*[-–—.)]\s*/, '').trim();
   const entry = (LABEL[cat] || cat) + ': ' + title;
 
-  if (status === 'A') added.push(entry);
-  else if (status === 'M') updated.push(entry);
+  // A .docx and its exported .pdf are one document to a student, so list the
+  // title once rather than once per file format.
+  if (status === 'A' && !added.includes(entry)) added.push(entry);
+  else if (status === 'M' && !updated.includes(entry)) updated.push(entry);
 }
 
 /* ---- newest announcement headline ---- */
