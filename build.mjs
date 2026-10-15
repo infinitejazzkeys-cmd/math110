@@ -199,7 +199,11 @@ function page({ title, active, body, h1, lede }) {
     + esc(n.label) + '</a>'
   ).join('');
 
-  const updated = fmtDate(new Date().toISOString().slice(0, 10),
+  // Local date, not UTC: toISOString() would show tomorrow after 7 PM in Chicago.
+  const now = new Date();
+  const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0')
+    + '-' + String(now.getDate()).padStart(2, '0');
+  const updated = fmtDate(today,
     { month: 'long', day: 'numeric', year: 'numeric' });
 
   return `<!doctype html>
