@@ -40,14 +40,17 @@ The final exam is 2 hours and cumulative, worth 26% of your grade. It will be ad
 ## Homework
 
 In each instructional week, a worksheet will be distributed at the end of class on Wednesday
-and is due at the beginning of class the following Monday. There are 7 assignments, together
-worth 42% of your grade.
+and is due at the beginning of class the following Monday. The one exception is Homework 7:
+since there is no class on Wednesday, November 25, it will be distributed at the end of class on
+Monday, November 23, and is due at the beginning of class on Monday, November 30. There are 7
+assignments, together worth 42% of your grade.
 
 ## Resubmission Policy
 
 Each homework assignment may be resubmitted **once**, subject to the conditions below.
-Resubmissions are due at the beginning of class on Monday of the week following the one in
-which the graded assignment is returned. Correct resubmissions earn back full points.
+Resubmissions are due at the beginning of class one week after the graded assignment is
+returned, or at the next class meeting if there is no class that day. Correct resubmissions
+earn back full points.
 
 To be eligible for resubmission, **all** of the following requirements must be met:
 
