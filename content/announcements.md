@@ -10,6 +10,10 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-10-21 — Homework 3 updated
+
+The version of Homework 3 I posted earlier today included a problem on conditional probability, which we haven't covered yet. I've replaced it with an updated version. Please download the new one from the Homework page. If you've already started, you can keep your work: the other problems are all still there, but they are numbered differently, and there is a new Problem 1 on sample spaces.
+
 ## 2026-10-20 — Updated resubmission dates
 
 To give everyone a full week to work on resubmissions, homework resubmissions are now due at
