@@ -12,6 +12,8 @@
     "publish-quiet": "node build.mjs && node publish.mjs && node notify.mjs",
 
     "send-email": "powershell -NoProfile -ExecutionPolicy Bypass -File send-mail.ps1",
+    "send-and-announce": "powershell -NoProfile -ExecutionPolicy Bypass -File send-mail.ps1 -Announce",
+    "preview-announce": "powershell -NoProfile -ExecutionPolicy Bypass -File send-mail.ps1 -DryRun -Announce",
     "discard-email": "node -e \"require('fs').rmSync('email-draft.txt',{force:true});console.log('Draft discarded - nothing will be emailed.')\"",
 
     "setup-mail": "powershell -NoProfile -ExecutionPolicy Bypass -File setup-mail.ps1",

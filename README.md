@@ -143,6 +143,8 @@ to five students and an administrator at 9pm cannot be recalled.
 |---|---|
 | `npm run publish-site` | Publish and draft the email — **sends nothing** |
 | `npm run send-email` | Send the current draft to the class |
+| `npm run send-and-announce` | Send the draft, then post the same message as an announcement on the site (commits and pushes) |
+| `npm run preview-announce` | Show the email and the announcement it would make, send nothing |
 | `npm run discard-email` | Throw the draft away without sending |
 | `npm run test-mail` | Send the draft to yourself only |
 | `npm run preview-mail` | Print what would be sent, send nothing |

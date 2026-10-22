@@ -6,10 +6,13 @@
 #
 #   -TestOnly   send to yourself only, ignoring the recipient list
 #   -DryRun     show what would be sent, send nothing
+#   -Announce   after sending, post the same message as an announcement on the
+#               site (see announce.mjs). With -DryRun, previews it instead.
 
 param(
     [switch]$TestOnly,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$Announce
 )
 
 $ErrorActionPreference = 'Stop'
@@ -97,6 +100,9 @@ if ($DryRun) {
     Write-Host ""
     Write-Host "--- dry run, nothing sent ---" -ForegroundColor Yellow
     Write-Host $body
+    if ($Announce -and -not $usingSample) {
+        & node (Join-Path $here 'announce.mjs') $draftPath --preview
+    }
     exit 0
 }
 
@@ -142,6 +148,11 @@ try {
     # Consume the draft so the same message can never go out twice. Tests and
     # dry runs leave it alone, and a failed send keeps it for manual sending.
     if (-not $TestOnly -and -not $usingSample) {
+        $annCopy = $null
+        if ($Announce) {
+            $annCopy = Join-Path ([IO.Path]::GetTempPath()) 'math110-announcement.txt'
+            Copy-Item $draftPath $annCopy -Force
+        }
         if (Test-Path $draftPath) { Remove-Item $draftPath -Force }
 
         # Remember what we just told them about, so the next draft covers only
@@ -149,6 +160,15 @@ try {
         $sha = & git -C $here rev-parse HEAD 2>$null
         if ($LASTEXITCODE -eq 0 -and $sha) {
             Set-Content -Path (Join-Path $here '.last-emailed') -Value $sha.Trim() -Encoding ascii
+        }
+
+        # Post the same message on the site. announce.mjs moves .last-emailed
+        # past its own commit, so the next email won't announce it again.
+        if ($annCopy) {
+            Write-Host ""
+            Write-Host "Posting a matching announcement on the site..."
+            & node (Join-Path $here 'announce.mjs') $annCopy
+            Remove-Item $annCopy -Force -ErrorAction SilentlyContinue
         }
     }
 }
