@@ -117,7 +117,9 @@ const subject = announced && headline
   : 'MATH 110 - new material posted';
 
 const lines = ['Hi everyone,', ''];
-lines.push('There is ' + bits.join(' and ') + ' on the course website.');
+// "There is a new file" but "There are new files" / "There are ... and ...".
+const plural = bits.length > 1 || bits[0] === 'new files';
+lines.push('There ' + (plural ? 'are ' : 'is ') + bits.join(' and ') + ' on the course website.');
 lines.push('');
 
 if (announced && headline) {
