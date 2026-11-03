@@ -10,9 +10,46 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-02 — Worksheet 1 Solutions and Worksheet 2 Solutions posted
+
+There are new files on the course website.
+
+Newly posted:
+- Handouts: Worksheet 1 Solutions
+- Handouts: Worksheet 2 Solutions
+
+## 2026-11-02 — Exam 1 Review Overview and Exam 1 Review Worksheet posted
+
+There are new files on the course website.
+
+Newly posted:
+- Exam material: Exam 1 Review Overview
+- Exam material: Exam 1 Review Worksheet
+
+## 2026-10-28 — Worksheet 2 and Homework 4 posted
+
+There are new files on the course website.
+
+Newly posted:
+- Handouts: Worksheet 2
+- Homework: Homework 4
+
+Updated:
+- Lecture slides: Probability
+
 ## 2026-10-21 — Homework 3 updated
 
 The version of Homework 3 I posted earlier today included a problem on conditional probability, which we haven't covered yet. I've replaced it with an updated version. Please download the new one from the Homework page. If you've already started, you can keep your work: the other problems are all still there, but they are numbered differently, and there is a new Problem 1 on sample spaces.
+
+## 2026-10-21 — Homework 3 posted
+
+There is a new file on the course website.
+
+Newly posted:
+- Homework: Homework 3
+
+Updated:
+- Lecture slides: Probability
 
 ## 2026-10-20 — Updated resubmission dates
 
@@ -28,6 +65,20 @@ resubmission dates are:
 Homework due dates have not changed. Also note that **there is no class on Wednesday,
 November 25**. The full schedule, with every due date, is on the Schedule page and in the
 updated syllabus.
+
+## 2026-10-19 — Probability slides posted
+
+There is a new file on the course website.
+
+Newly posted:
+- Lecture slides: Probability
+
+## 2026-10-14 — Homework 2 posted
+
+There is a new file on the course website.
+
+Newly posted:
+- Homework: Homework 2
 
 ## 2026-10-12 — Welcome to the course website
 

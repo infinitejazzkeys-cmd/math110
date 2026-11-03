@@ -133,7 +133,7 @@ receive, and nothing leaves your machine until you say so:
 
 ```bash
 npm run publish-site     # publishes the site, prints a draft, sends nothing
-npm run send-email       # NOW it goes to the class
+npm run send-email       # NOW it goes to the class, and is posted as an announcement
 ```
 
 That's deliberate. An email you forgot to send takes ten seconds to fix; one sent
@@ -142,12 +142,11 @@ to five students and an administrator at 9pm cannot be recalled.
 | Command | What it does |
 |---|---|
 | `npm run publish-site` | Publish and draft the email — **sends nothing** |
-| `npm run send-email` | Send the current draft to the class |
-| `npm run send-and-announce` | Send the draft, then post the same message as an announcement on the site (commits and pushes) |
-| `npm run preview-announce` | Show the email and the announcement it would make, send nothing |
+| `npm run send-email` | Send the current draft to the class, then post the same message as an announcement on the site (commits and pushes) |
+| `npm run send-email-only` | Send the draft without posting an announcement |
+| `npm run preview-mail` | Show the email and the announcement it would make, send nothing |
 | `npm run discard-email` | Throw the draft away without sending |
 | `npm run test-mail` | Send the draft to yourself only |
-| `npm run preview-mail` | Print what would be sent, send nothing |
 
 `publish-quiet` still works and is identical to `publish-site`.
 

@@ -49,6 +49,28 @@ if (lines.some(l => /^Announcement:\s/.test(l))) {
 let headline = sm[1].trim().replace(/^MATH\s*110\s*[-–—:]\s*/i, '');
 headline = headline.charAt(0).toUpperCase() + headline.slice(1);
 
+// The automatic drafts all share the subject "new material posted", which
+// would make every announcement look the same. Name what was posted instead,
+// e.g. "Homework 4 and Worksheet 2 posted".
+if (/^new material posted$/i.test(headline)) {
+  const listAfter = (label) => {
+    const i = lines.findIndex(l => l.trim().toLowerCase() === label);
+    if (i < 0) return [];
+    const out = [];
+    for (const l of lines.slice(i + 1)) {
+      const m = l.match(/^\s*-\s+(?:([^:]+):\s*)?(.+?)\s*$/);
+      if (!m) break;
+      // slide decks read better as "Probability slides"
+      out.push(m[1] && /slides/i.test(m[1]) ? m[2] + ' slides' : m[2]);
+    }
+    return out;
+  };
+  const join = (a) => a.length <= 2 ? a.join(' and ') : a.slice(0, -1).join(', ') + ', and ' + a[a.length - 1];
+  const added = listAfter('newly posted:'), updated = listAfter('updated:');
+  if (added.length && added.length <= 3) headline = join(added) + ' posted';
+  else if (!added.length && updated.length && updated.length <= 3) headline = join(updated) + ' updated';
+}
+
 /* ---- email body -> announcement body ---- */
 let body = lines.slice(1);
 while (body.length && !body[0].trim()) body.shift();
