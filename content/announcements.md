@@ -10,6 +10,13 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-04 — Exam 1 Review Worksheet Solutions posted
+
+There is a new file on the course website, on both the Exams and Handouts pages.
+
+Newly posted:
+- Exam material: Exam 1 Review Worksheet Solutions
+
 ## 2026-11-02 — Worksheet 1 Solutions and Worksheet 2 Solutions posted
 
 There are new files on the course website.
