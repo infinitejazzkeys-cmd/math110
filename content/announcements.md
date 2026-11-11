@@ -10,6 +10,10 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-11 — No class today (Veterans Day)
+
+There is no class today, Wednesday, November 11, because it is Veterans Day. We will have a make-up class on **Friday, November 13**, where we will review Counting.
+
 ## 2026-11-11 — Updated schedule for the rest of the term
 
 Here is the updated schedule for the rest of the term.
