@@ -48,9 +48,8 @@ assignments, together worth 48% of your grade.
 
 Each homework assignment may be resubmitted **once**, subject to the conditions below.
 Resubmissions are due at the beginning of class one week after the graded assignment is
-returned, or at the next class meeting if there is no class that day. Homework 6 will be
-returned at the Final Exam on Wednesday, December 9, so its resubmissions are due one week
-later, on Wednesday, December 16. Correct resubmissions earn back full points.
+returned, or at the next class meeting if there is no class that day. Homework 6, which is
+due at the end of the term, cannot be resubmitted. Correct resubmissions earn back full points.
 
 To be eligible for resubmission, **all** of the following requirements must be met:
 
