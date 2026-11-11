@@ -10,6 +10,26 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-11 — Updated schedule for the rest of the term
+
+Here is the updated schedule for the rest of the term.
+
+- Wednesday, November 11: No class (Veterans Day).
+- Friday, November 13 (make-up class): Counting review.
+- Monday, November 16: Probability review.
+- Wednesday, November 18: Midterm Exam 1, followed by the start of the Statistics unit.
+- Monday, November 23, through Wednesday, December 2: Statistics.
+- Monday, December 7: Final Exam review.
+- Wednesday, December 9: Final Exam.
+
+A few other changes:
+
+- There will be no Midterm Exam 2. The Final Exam is still cumulative.
+- There will be two more homework assignments, both on Statistics, for six in total. Homework 6 cannot be resubmitted.
+- The grading weights are now: Homework 48%, Midterm Exam 1 26%, and Final Exam 26%.
+
+The Schedule page and the syllabus on the course site have been updated to match.
+
 ## 2026-11-04 — Exam 1 Review Worksheet Solutions posted
 
 There is a new file on the course website, on both the Exams and Handouts pages.
