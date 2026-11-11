@@ -75,7 +75,7 @@ if (/^new material posted$/i.test(headline)) {
 let body = lines.slice(1);
 while (body.length && !body[0].trim()) body.shift();
 if (body.length && /^(hi|hello|dear)\b.*,\s*$/i.test(body[0])) body.shift();   // greeting
-const sign = body.findIndex(l => /^(best|thanks|thank you|cheers|sincerely|regards)\b[^.]*,?\s*$/i.test(l.trim()));
+const sign = body.findIndex(l => /^(best|thanks|thank you|cheers|sincerely|regards|see you)\b[^.]*,?\s*$/i.test(l.trim()));
 if (sign >= 0) body = body.slice(0, sign);                                     // sign-off
 body = body
   .filter(l => !/^course website:/i.test(l.trim()))      // the reader is already on the site
