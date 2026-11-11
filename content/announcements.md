@@ -12,7 +12,7 @@
 
 ## 2026-11-11 — No class today (Veterans Day)
 
-There is no class today, Wednesday, November 11, because it is Veterans Day. We will have a make-up class on **Friday, November 13**, where we will review Counting.
+There is no class today, Wednesday, November 11, because it is Veterans Day. We will have a make-up class on **Friday, November 13, from 6:00 to 8:00 PM in Room 008**, where we will review Counting.
 
 ## 2026-11-11 — Updated schedule for the rest of the term
 
