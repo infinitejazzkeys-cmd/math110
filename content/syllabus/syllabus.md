@@ -25,12 +25,11 @@ The class meets twice per week on Mondays and Wednesdays from 6:00 PM to 8:00 PM
 2520 S. Western Ave, Chicago, IL 60608 (Room 008). On regular instructional days there is a
 10-minute break from 6:55 PM to 7:05 PM.
 
-## Midterm Exams
+## Midterm Exam
 
-There are two 1-hour midterm exams, each worth 16% of your grade.
+There is one 1-hour midterm exam, worth 26% of your grade.
 
-- **Midterm Exam 1** — Wednesday, November 4. Covers the Counting and Probability units.
-- **Midterm Exam 2** — Wednesday, December 2. Covers the Statistics unit.
+- **Midterm Exam 1** — Wednesday, November 18. Covers the Counting and Probability units.
 
 ## Final Exam
 
@@ -40,17 +39,18 @@ The final exam is 2 hours and cumulative, worth 26% of your grade. It will be ad
 ## Homework
 
 In each instructional week, a worksheet will be distributed at the end of class on Wednesday
-and is due at the beginning of class the following Monday. The one exception is Homework 7:
+and is due at the beginning of class the following Monday. The one exception is Homework 5:
 since there is no class on Wednesday, November 25, it will be distributed at the end of class on
-Monday, November 23, and is due at the beginning of class on Monday, November 30. There are 7
-assignments, together worth 42% of your grade.
+Monday, November 23, and is due at the beginning of class on Monday, November 30. There are 6
+assignments, together worth 48% of your grade.
 
 ## Resubmission Policy
 
 Each homework assignment may be resubmitted **once**, subject to the conditions below.
 Resubmissions are due at the beginning of class one week after the graded assignment is
-returned, or at the next class meeting if there is no class that day. Correct resubmissions
-earn back full points.
+returned, or at the next class meeting if there is no class that day. Homework 6 will be
+returned at the Final Exam on Wednesday, December 9, so its resubmissions are due one week
+later, on Wednesday, December 16. Correct resubmissions earn back full points.
 
 To be eligible for resubmission, **all** of the following requirements must be met:
 
