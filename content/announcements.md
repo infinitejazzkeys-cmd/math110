@@ -10,6 +10,14 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-12 — Sets Review Solutions and Sets Review Solutions posted
+
+There are new files on the course website.
+
+Newly posted:
+- Exam material: Sets Review Solutions
+- Handouts: Sets Review Solutions
+
 ## 2026-11-11 — No class today (Veterans Day)
 
 There is no class today, Wednesday, November 11, because it is Veterans Day. We will have a make-up class on **Friday, November 13, from 6:00 to 8:00 PM in Room 008**, where we will review Counting.
