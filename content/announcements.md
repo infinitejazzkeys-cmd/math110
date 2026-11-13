@@ -10,6 +10,10 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-13 — Make-up class today, 6:00–8:00 PM
+
+A reminder that we have a make-up class today, Friday, November 13, from 6:00 to 8:00 PM in Room 008. We will review Counting.
+
 ## 2026-11-12 — Sets Review Solutions and Sets Review Solutions posted
 
 There are new files on the course website.
