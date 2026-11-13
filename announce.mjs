@@ -61,7 +61,9 @@ if (/^new material posted$/i.test(headline)) {
       const m = l.match(/^\s*-\s+(?:([^:]+):\s*)?(.+?)\s*$/);
       if (!m) break;
       // slide decks read better as "Probability slides"
-      out.push(m[1] && /slides/i.test(m[1]) ? m[2] + ' slides' : m[2]);
+      const name = m[1] && /slides/i.test(m[1]) ? m[2] + ' slides' : m[2];
+      // the same file can be posted under two tabs (e.g. Handouts and Exams)
+      if (!out.includes(name)) out.push(name);
     }
     return out;
   };
