@@ -141,7 +141,7 @@ if (updated.length) {
 lines.push('Course website: ' + url);
 lines.push('');
 lines.push('Best,');
-lines.push('Prof. Collins');
+lines.push('Dr. Collins');
 
 const draft = 'Subject: ' + subject + '\n\n' + lines.join('\n') + '\n';
 fs.writeFileSync(OUT, draft);

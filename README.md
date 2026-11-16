@@ -101,7 +101,7 @@ nothing is needed from IDPL's IT staff.
    2-Step Verification is on, and your normal password will *not* work for SMTP.
 3. Copy `mail.config.example.json` to `mail.config.json` and fill in:
    - `from` — the new Gmail address
-   - `fromName` — what students see, e.g. `Prof. Collins - MATH 110`
+   - `fromName` — what students see, e.g. `Dr. Collins - MATH 110`
    - `replyTo` — your real `p.collins@idpl.org`, so replies reach your normal inbox
    - `recipients` — the 5 students and your administrator
 4. **Store the app password**, encrypted:
