@@ -10,6 +10,14 @@
   Delete the old ones whenever you like — nothing else depends on them.
 -->
 
+## 2026-11-17 — Probability Review Solutions posted
+
+There are new files on the course website.
+
+Newly posted:
+- Exam material: Probability Review Solutions
+- Handouts: Probability Review Solutions
+
 ## 2026-11-16 — Probability Review posted
 
 There are new files on the course website.
