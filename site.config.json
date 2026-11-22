@@ -56,11 +56,11 @@
     { "week": 6, "date": "2026-11-13", "day": "Fri", "content": "Make-up class: Counting review" },
     { "week": 7, "date": "2026-11-16", "day": "Mon", "content": "Probability review" },
     { "week": 7, "date": "2026-11-18", "day": "Wed", "content": "Midterm Exam 1, begin Statistics unit", "highlight": true },
-    { "week": 8, "date": "2026-11-23", "day": "Mon", "content": "Continue Statistics unit" },
+    { "week": 8, "date": "2026-11-23", "day": "Mon", "content": "Midterm Exam 1 follow-up, Probability by Counting review" },
     { "week": 8, "date": "2026-11-25", "day": "Wed", "content": "No class — holiday" },
-    { "week": 9, "date": "2026-11-30", "day": "Mon", "content": "HW5 due, continue Statistics unit" },
-    { "week": 9, "date": "2026-12-02", "day": "Wed", "content": "Finish Statistics unit" },
-    { "week": 10, "date": "2026-12-07", "day": "Mon", "content": "HW5 resubmissions due, HW6 due, Final Exam review" },
+    { "week": 9, "date": "2026-11-30", "day": "Mon", "content": "HW5 due, Independence, Conditional Probability, and Binomial Experiments review" },
+    { "week": 9, "date": "2026-12-02", "day": "Wed", "content": "Descriptive Statistics, Random Variables and Histograms" },
+    { "week": 10, "date": "2026-12-07", "day": "Mon", "content": "HW5 resubmissions due, HW6 due, Normal Distributions, Final Exam review" },
     { "week": 10, "date": "2026-12-09", "day": "Wed", "content": "Final Exam", "highlight": true }
   ]
 }
